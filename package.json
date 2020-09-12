@@ -1,0 +1,44 @@
+{
+  "name": "progreshift",
+  "version": "1.0.0",
+  "description": "Ahigacha's Website Design submission for Hiedescom 2020",
+  "main": "index.js",
+  "scripts": {
+    "start-dev": "webpack-dev-server --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shaddamah/progreshift.git"
+  },
+  "keywords": [
+    "Hiedescom",
+    "2020"
+  ],
+  "author": "Ahigacha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Shaddamah/progreshift/issues"
+  },
+  "homepage": "https://github.com/Shaddamah/progreshift#readme",
+  "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
+    "babel-loader": "^8.1.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^6.1.0",
+    "css-loader": "^4.3.0",
+    "sass": "^1.26.10",
+    "sass-loader": "^10.0.2",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0",
+    "webpack-merge": "^5.1.4",
+    "webpack-pwa-manifest": "^4.2.0",
+    "workbox-webpack-plugin": "^5.1.4"
+  },
+  "dependencies": {
+    "html-webpack-plugin": "^4.4.1",
+    "regenerator-runtime": "^0.13.7"
+  }
+}
