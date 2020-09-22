@@ -1,7 +1,6 @@
 import UrlParser from '../routes/urlparser';
 import Routes from '../routes/routes';
 
-
 class App {
   constructor({hamburger, drawer, content}) {
     this._hamburger = hamburger;

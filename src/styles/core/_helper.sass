@@ -1,4 +1,6 @@
 // Reset
+
+
 *
   margin: 0
   padding: 0
@@ -18,7 +20,8 @@ body
     
 h2
   font-size: 1.5rem
-
+li
+  display: inline-block
 a
   color: inherit
   outline: none
@@ -27,9 +30,16 @@ a
 button
   &:hover
     cursor: pointer
+    
+.button
+  padding: 1rem
+  min-width: 44px
+  min-height: 44px
+  border-radius: 15px
 
 section
     flex: 1 0 auto
+
 
 .material-icons
   vertical-align: middle !important
@@ -39,8 +49,11 @@ section
     font-size: inherit
 .center
   text-align: center
-
+.d-flex
+  display: flex
 .mh-auto
   margin: 0 auto
 .mv-auto
   margin: auto 0
+.white-text
+  color: white

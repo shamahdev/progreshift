@@ -6,3 +6,42 @@
 @import core/variables
 @import core/mixins
 @import core/helper
+
+.container
+    padding: 0 1rem
+    margin: 0 auto //eh kebalik te?
+    //naonna
+    @include media-in(tablet)
+        width: 970px
+    @include media-in(desktop)
+        width: 1170px   
+
+.home-header
+    background-color: $primary
+    width:100%
+    min-height: 300px
+   
+
+.container.home
+    flex-direction: column-reverse
+    @include media-in(tablet)
+        flex-direction: row
+
+.head-description, .hero
+    width: 100%
+    @include media-in(tablet)
+        width: calc((100% / 2))
+    //sipsipokok
+.menu-nav
+    gap: 20px
+    justify-content: space-evenly
+.menu-button
+    width: calc(100% / 3)
+.menu-button > .button:active,.menu-button > .button:hover
+    background-color: #ffffff
+
+.img-hero
+    width: 100%
+    padding: 50px
+  
+//naha rusak wkwk
