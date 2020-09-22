@@ -9,8 +9,7 @@
 
 .container
     padding: 0 1rem
-    margin: 0 auto //eh kebalik te?
-    //naonna
+    margin: 0 auto 
     @include media-in(tablet)
         width: 970px
     @include media-in(desktop)
@@ -19,29 +18,55 @@
 .home-header
     background-color: $primary
     width:100%
-    min-height: 300px
-   
+    min-height: 425px
+    position: relative
+    border-bottom-left-radius: 35px
 
 .container.home
     flex-direction: column-reverse
     @include media-in(tablet)
         flex-direction: row
 
-.head-description, .hero
+.description, .hero
     width: 100%
     @include media-in(tablet)
         width: calc((100% / 2))
-    //sipsipokok
+
 .menu-nav
-    gap: 20px
-    justify-content: space-evenly
+    gap: 25px
+    justify-content: flex-start
+
 .menu-button
-    width: calc(100% / 3)
-.menu-button > .button:active,.menu-button > .button:hover
-    background-color: #ffffff
+    min-width: 15%
+
+.menu-button
+    padding: 1rem
+    transition: 0.5s
+    border-radius: 15px   
+
+.menu-button:active,.menu-button:hover
+    transition:  0.5s
+    color: #ffff
+    background-color: $purple
 
 .img-hero
     width: 100%
-    padding: 50px
-  
-//naha rusak wkwk
+    padding: 30px
+.wave
+    position: absolute
+    right: 0  
+    bottom: 0
+    display: none
+    @include media-in(tablet)
+        display: block
+
+//section2
+.home-section-2
+    flex-direction: column-reverse
+    @include media-in(tablet)
+        flex-direction: row
+
+.description, .chart
+    width: 100%
+    @include media-in(tablet)
+        width: calc((100% / 2)) 
