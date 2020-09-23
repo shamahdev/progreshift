@@ -6,6 +6,7 @@
 @import core/variables
 @import core/mixins
 @import core/helper
+@import core/carousel
 
 .container
     padding: 0 1rem
@@ -27,7 +28,7 @@
     @include media-in(tablet)
         flex-direction: row
 
-.description, .hero
+.description + .hero
     width: 100%
     @include media-in(tablet)
         width: calc((100% / 2))
@@ -44,7 +45,7 @@
     transition: 0.5s
     border-radius: 15px   
 
-.menu-button:active,.menu-button:hover
+.menu-button:active, .menu-button:hover
     transition:  0.5s
     color: #ffff
     background-color: $purple
@@ -66,7 +67,82 @@
     @include media-in(tablet)
         flex-direction: row
 
-.description, .chart
+.description + .chart
     width: 100%
     @include media-in(tablet)
         width: calc((100% / 2)) 
+
+//section3
+.home-section-3
+    flex-direction: column
+    @include media-in(tablet)
+        flex-direction: row 
+.industry-title
+    @include media-in(tablet)
+        display: none     
+.industry-title-description
+    @include media-in(phone)
+        display: none     
+    @include media-in(tablet)
+        display: block           
+.industry-group
+    flex-wrap: wrap
+    gap: 40px
+    @include media-in(tablet)
+        padding: 0rem 5rem
+.industry-icon
+    width: calc((100% / 2 - 40px))
+    min-height:122px
+    padding: 1rem
+    border-radius: 20px 
+    transition: 0.5s   
+    @include media-in(tablet)
+         width: 25%
+    &.primary
+        border: 2px solid $primary
+        color: $primary
+        &:active, &:hover
+            background-color: $primary
+            color: #ffffff
+    &.blue
+        border: 2px solid $blue
+        color: $blue
+        &:active, &:hover
+            background-color: $blue
+            color: #ffffff    
+    &.green
+        border: 2px solid $green
+        color: $green
+        &:active,&:hover
+            background-color: $green
+            color: #ffffff    
+    &.darkpurple
+        border: 2px solid $darkpurple    
+        color: $darkpurple         
+        &:active,&:hover
+            background-color: $darkpurple
+            color: #ffffff    
+.material-icons-outlined 
+    font-size: 5rem
+//section hero
+.home-section-hero
+    display: none
+    @include media-in(tablet)
+        display: block
+//section home video
+.home-section-video
+    background-image: url('./../public/image/Mask.png')
+    min-height: 750px
+    background-size: cover
+//section home new normal industry
+.home-section-newnormal
+    flex-direction: column
+    @include media-in(tablet)
+        flex-direction: row
+.industry-hero , .description
+    width: 100%
+    @include media-in(tablet)
+        width: calc((100% / 2)) 
+
+
+    

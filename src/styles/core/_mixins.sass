@@ -3,3 +3,19 @@
     @if $point == $device
       @media (min-width: $size)
         @content
+
+$sides: (all, top, bottom, left, right)
+@for $space from 0 through 10
+  @each $side in $sides
+    @if $side == 'all'
+      .m-#{$space}
+        margin: #{$space/2}rem
+
+      .p-#{$space}
+        padding: #{$space/2}rem  
+    @else
+      .m#{str-slice($side, 0, 1)}-#{$space}
+        margin-#{$side}: #{$space/2}rem
+
+      .p#{str-slice($side, 0, 1)}-#{$space}
+        padding-#{$side}: #{$space/2}rem
