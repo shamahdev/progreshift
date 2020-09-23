@@ -4,25 +4,25 @@ const Home = {
         <div class="home-header">
           <div class="container home d-flex">
             <div class="description">
-              <h2 class="white-text center ">Kita Bisa Kita Hebat</h2>
+              <h2 class="header-text white-text">Kita Bisa<br>Kita Hebat!</h2>
               <div class="menu-nav d-flex margin-top-2">
-                <a class="menu-button">
+                <a class="menu-button active">
                   <p class="semibold">01</p>
-                  <p>Pandemi</p>
+                  <p class="desc">Pandemi</p>
                 </a>
                 <a class="menu-button">
                   <p class="semibold">02</p>
-                  <p>New Normal</p>
+                  <p class="desc">New Normal</p>
                 </a>
                 <a class="menu-button">
                   <p class="semibold">03</p>
-                  <p>Pilihan Karir</p>
+                  <p class="desc">Pilihan Karir</p>
                 </a>
               </div>
             </div>
             <div class="hero">
               <img alt="" src="./image/rocketman.png" class="img-hero">
-              <img alt="" src="./image/Vector 3.png" style="z-index: 0;" class="wave">
+              <img alt="" src="./image/Vector 3.png" class="wave">
             </div>
           </div>
         </div>
@@ -73,12 +73,10 @@ const Home = {
         <div class="home-section-video">
           <div class="carousel-container">
             <h2>slider</h2>
-            <div class="carousel my-carousel carousel--translate">
+            <div class="carousel my-carousel carousel--translate ">
               <input class="carousel__activator" type="radio" name="carousel" id="F" checked="checked"/>
               <input class="carousel__activator" type="radio" name="carousel" id="G"/>
               <input class="carousel__activator" type="radio" name="carousel" id="H"/>
-              <input class="carousel__activator" type="radio" name="carousel" id="I"/>
-              <input class="carousel__activator" type="radio" name="carousel" id="J"/>
               <div class="carousel__controls">
                 <label class="carousel__control carousel__control--backward" for="J"></label>
                 <label class="carousel__control carousel__control--forward" for="G"></label>
@@ -90,15 +88,7 @@ const Home = {
               <div class="carousel__controls">
                 <label class="carousel__control carousel__control--backward" for="G"></label>
                 <label class="carousel__control carousel__control--forward" for="I"></label>
-              </div>
-              <div class="carousel__controls">
-                <label class="carousel__control carousel__control--backward" for="H"></label>
-                <label class="carousel__control carousel__control--forward" for="J"></label>
-              </div>
-              <div class="carousel__controls">
-                <label class="carousel__control carousel__control--backward" for="I"></label>
-                <label class="carousel__control carousel__control--forward" for="F"></label>
-              </div>
+              </div> 
               <div class="carousel__track">
                 <li class="carousel__slide">
                   <h1>F</h1>
@@ -109,21 +99,16 @@ const Home = {
                 <li class="carousel__slide">
                   <h1>H</h1>
                 </li>
-                <li class="carousel__slide">
-                  <h1>I</h1>
-                </li>
-                <li class="carousel__slide">
-                  <h1>J</h1>
-                </li>
-              </div>
-              <div class="carousel__indicators">
-                <label class="carousel__indicator" for="F"></label>
-                <label class="carousel__indicator" for="G"></label>
-                <label class="carousel__indicator" for="H"></label>
-                <label class="carousel__indicator" for="I"></label>
-                <label class="carousel__indicator" for="J"></label>
-              </div>
+                
+              </div>  
+           
             </div>
+           
+            <div class="carousel__indicators">
+              <label class="carousel__indicator" for="F"></label>
+              <label class="carousel__indicator" for="G"></label>
+              <label class="carousel__indicator" for="H"></label>
+          </div>
           </div>
         </div>
         <div class="home-section-newnormal container d-flex"> 
@@ -135,6 +120,17 @@ const Home = {
             <p class="p-2">Menperin menyebutkan, saat ini juga telah terjadi berbagai tatanan baru dalam aktivitas industri. Misalnya, sebelum pandemi Covid-19, industri yang beroperasi dapat mengoptimalkan 100 persen atau seluruh pekerjanya. Namun, dengan penerapan protokol kesehatan seperti aturan physical distancing, industri melakukan penyesuaian karyawannya hingga 50 persen.</p>
             <p class="p-2">Tidak hanya itu, sebagian industri juga mengalami perlambatan atau penurunan utilitas akibat dampak pandemi Covid-19, sehingga pemenuhan kapasitas terpasang berkisar antara 20-30 persen. Namun, bagi mereka yang masih mendapat izin beroperasi, penerapan protokol kesehatan harus tetap diutamakan.            </p>
           </div>
+        </div>
+        <div class="home-section-job">
+          <h2 class="white-text p-10 pt-20">Pilihanmua Menentukan
+            Masa Depanmu!</h2>
+            <img class="wave" src="./image/Rectangle.png">
+        </div>
+        <div class="home-section-navigate-bottom center mt-7">
+          <p>Navigate To</p>
+          <a href="#" class="m-2 "><p class="bottom-nav">Lihat Tips di era New Normal <span class="material-icons white-text bottom-nav-icon">   keyboard_arrow_right</span></p></a>
+          <a href="#" class="m-2 "><p class="bottom-nav">Tentang Pengembang Web  <span class="material-icons white-text bottom-nav-icon">   keyboard_arrow_right</span></p></a>
+          <a href="#" class="m-2 "><p class="bottom-nav">Galeri Inspiratif <span class="material-icons white-text bottom-nav-icon">   keyboard_arrow_right</span></p></a> 
         </div>
       `;
   },
