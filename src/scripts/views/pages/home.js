@@ -4,8 +4,8 @@ const Home = {
         <div class="home-header">
           <div class="container home d-flex">
             <div class="description">
-              <h2 class="header-text white-text">Kita Bisa<br>Kita Hebat!</h2>
-              <div class="menu-nav d-flex margin-top-2">
+              <h2 class="header-text">Kita Bisa<br>Kita Hebat!</h2>
+              <div class="menu-nav">
                 <a class="menu-button active">
                   <p class="semibold">01</p>
                   <p class="desc">Pandemi</p>
@@ -21,8 +21,13 @@ const Home = {
               </div>
             </div>
             <div class="hero">
-              <img alt="" src="./image/rocketman.png" class="img-hero">
+              <img alt="" src="./image/rocketman.png" class="max-img">
               <img alt="" src="./image/Vector 3.png" class="wave">
+            </div>
+            <div class="social-aside">
+              <a href="" target="_blank" rel="noopener" class="material-icons">notifications</a>
+              <a href="" target="_blank" rel="noopener" class="material-icons">facebook</a>
+              <a href="" target="_blank" rel="noopener" class="material-icons">share</a>
             </div>
           </div>
         </div>
@@ -35,7 +40,7 @@ const Home = {
               Asia Tenggara setelah Filipina. </p>
           </div>
           <div class="chart">
-            <img alt="" src="./image/chartcoba.png" class="img-hero">
+            <img alt="" src="./image/chartcoba.png" class="max-img">
           </div>
         </div>
         <div class="home-section-3 d-flex container">
@@ -67,8 +72,8 @@ const Home = {
               <p class="p-2">Dilansir dari Kompasiana.com sektor pariwisata menjadi sektor yang paling terdampak. Hal ini disebakan </p>
             </div>
         </div>
-        <div class="home-section-hero">
-          <img alt="" src="./image/new normal 1.png"  style="margin-left:auto; margin-right:auto; display:block;">
+        <div class="d-flex">
+          <img alt="" src="./image/new normal 1.png" style="width: 100%">
         </div>
         <div class="home-section-video">
           <div class="carousel-container">
@@ -113,7 +118,7 @@ const Home = {
         </div>
         <div class="home-section-newnormal container d-flex"> 
           <div class="industry-hero">
-            <img alt="" src="./image/industri 1 (1).png" class="img-hero">
+            <img alt="" src="./image/industri 1 (1).png" class="max-img">
           </div>
           <div class="description">
             <h2 class="p-2">Industri di Era New Normal</h2>
@@ -128,9 +133,29 @@ const Home = {
         </div>
         <div class="home-section-navigate-bottom center mt-7">
           <p>Navigate To</p>
-          <a href="#" class="m-2 "><p class="bottom-nav">Lihat Tips di era New Normal <span class="material-icons white-text bottom-nav-icon">   keyboard_arrow_right</span></p></a>
-          <a href="#" class="m-2 "><p class="bottom-nav">Tentang Pengembang Web  <span class="material-icons white-text bottom-nav-icon">   keyboard_arrow_right</span></p></a>
-          <a href="#" class="m-2 "><p class="bottom-nav">Galeri Inspiratif <span class="material-icons white-text bottom-nav-icon">   keyboard_arrow_right</span></p></a> 
+          <a href="#" class="m-2 bottom-nav "><p>Lihat Tips di era New Normal <span class="material-icons white-text bottom-nav-icon">   keyboard_arrow_right</span></p></a>
+          <a href="#" class="m-2 bottom-nav"><p>Tentang Pengembang Web  <span class="material-icons white-text bottom-nav-icon">   keyboard_arrow_right</span></p></a>
+          <a href="#" class="m-2 bottom-nav"><p>Galeri Inspiratif <span class="material-icons white-text bottom-nav-icon">   keyboard_arrow_right</span></p></a> 
+        </div>
+        <div class="home-section-comment">
+          <h2 class="center mb-2">Beri Kami Saran / Kritikan</h2>
+          <div class="form-comment-container container p-3 d-flex ">
+            <div class="comment-hero">
+              <img alt="" src="./image/rocketman.png" class="max-img pt-10 pl-10 pr-10">
+
+            </div>
+            <div class="comment-form">
+              <input type="text" class="comment-input p-2" placeholder="Nama Lengkap">
+              <input type="text" class="comment-input p-2 mt-3" placeholder="Alamat Email">
+              <textarea type="text" class="comment-input text-field p-2 mt-3" rows="6" placeholder="Tuliskan Komentar"></textarea>
+            </div>
+            <div class="button-form">
+              <button class="button send-comment white-text">Kirim Komentar</button>
+            </div>
+          </div>
+        </div>
+        <div class="footer mt-10">
+          <p class="white-text footer-text">@copyright 2020</p>
         </div>
       `;
   },

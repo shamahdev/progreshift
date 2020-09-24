@@ -4,6 +4,9 @@
       @media (min-width: $size)
         @content
 
+@mixin drop-shadow($color, $depth: 12px, $width: 16px)
+  box-shadow: 0 $depth $width transparentize($color, 0.5)
+
 $sides: (all, top, bottom, left, right)
 @for $space from 0 through 10
   @each $side in $sides
@@ -12,7 +15,7 @@ $sides: (all, top, bottom, left, right)
         margin: #{$space/2}rem
 
       .p-#{$space}
-        padding: #{$space/2}rem  
+        padding: #{$space/2}rem
     @else
       .m#{str-slice($side, 0, 1)}-#{$space}
         margin-#{$side}: #{$space/2}rem

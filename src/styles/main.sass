@@ -13,70 +13,125 @@
 
 
 .container
-    padding: 0 1rem
+    padding: 0 1.5rem
     margin: 0 auto 
     @include media-in(tablet)
-        width: 970px
+        width: 90%
+        max-width: 970px
     @include media-in(desktop)
-        width: 1170px   
+        width: 90%
+        max-width: 1170px
+    &.home
+        flex-direction: column
+        @include media-in(phone)
+            flex-direction: row
 
 .home-header
     overflow: hidden
     z-index: 0
-    padding-top: 60px
+    padding-top: 5rem
     background-color: $primary
-    width:100%
-    min-height: 425px
+    width: 100%
     position: relative
     border-bottom-left-radius: 2.5rem
+    @include media-in(phone)
+        padding-top: 7.5rem
 
-.container.home
-    flex-direction: column
+.social-aside
+    display: none
     @include media-in(tablet)
-        flex-direction: row
-
+        display: flex
+        flex-direction: column
+    position: relative
+    right: 0
+    // padding: 2rem
+    a
+        font-size: 2rem
+        padding: 0.75rem
+        color: white
+        border: 2px solid #ffffff
+        margin: 0.5rem 2rem
+        border-radius: 1rem
+        transition: 0.3s
+        &:focus, &:hover
+            transition: 0.3s
+            @include drop-shadow(white)
+            background-color: white
+            color: $purple
+    
 .description
-    padding: 2rem
+    display: flex
+    flex-direction: column
+    width: 100%
+    padding: 0 2rem
     .header-text
-        overflow-wrap: break-word
+        color: #ffffff
+        padding: 2rem 0
         font-weight: 400
         font-size: 3rem
-    .hero
-        width: 100%
+        @include media-in(phone)
+            padding: 0
+            margin: auto 0
+            padding-bottom: 5rem
+.hero
+    width: 100%
+    height: 100%
+    margin-top: auto
+    .max-img
+        transition: 0.5s all
+        max-height: 350px
+        @include media-in(phone)
+            z-index: -1
+            position: absolute
+            right: 0
+            bottom: 0
+            width: auto
         @include media-in(tablet)
-            width: calc((100% / 2))
-
+            position: inherit
+            width: 100%
+    
 .menu-nav
+    position: absolute
     display: flex
     flex-direction: row
-    position: absolute
-    left: 2rem
-    bottom: 1rem
-
-
-.menu-button
-    margin: 0.5rem
-    cursor: pointer
-    padding: 0.5rem 1rem
-    transition: 0.3s
-    border-radius: 1rem
-    background-color: $primary
-    &:active, &:hover, &.active
-        transition:  0.3s
-        color: #ffff
-        background-color: $purple
-    .desc
-        font-size: 0.75rem
-        // display: none
-
-.img-hero
+    justify-content: center
+    left: 0
+    right: 0
+    bottom: 1.5rem
+    @include media-in(phone)
+        position: inherit
+        justify-content: start
+        margin-bottom: 2rem
+    .menu-button
+        margin: 0.5rem
+        cursor: pointer
+        padding: 0.5rem 1rem
+        transition: 0.3s
+        border-radius: 1rem
+        background-color: $primary
+        @include media-in(phone)
+            background-color: #ffffff00
+        &:active, &:hover, &.active
+            transition:  0.3s
+            color: #ffff
+            background-color: $purple
+        .desc
+            font-size: 0.75rem
+            font-weight: 300
+            @include media-in(desktop)
+                font-size: 1rem
+    
+.max-img
+    object-fit: contain
+    height: 100%
     width: 100%
 .wave
-    z-index: -1
+    z-index: -2
     position: absolute
     right: 0  
     bottom: 0
-    @include media-in(tablet)
+    @include media-in(phone)
+        width: 50%
         display: block
 
 //section2
@@ -158,7 +213,7 @@
     flex-direction: column
     @include media-in(tablet)
         flex-direction: row
-.industry-hero , .description
+.industry-hero
     width: 100%
     @include media-in(tablet)
         width: calc((100% / 2)) 
@@ -194,7 +249,68 @@
        
     display: none  
 
-.bottom-nav:hover > .bottom-nav-icon
-    transition: 1s
-    display: initial
-    margin-left: 50px
+.bottom-nav:hover > .bottom-nav-icon 
+    &:hover
+        transition: 1s
+        display: initial
+        margin-left: 50px
+.form-comment-container
+    flex-wrap: wrap
+    padding: 2rem !important
+    gap: 20px
+    border-radius: 35px
+    background-color: #F4F4F4
+    flex-direction: column
+    @include media-in(tablet)
+        flex-direction: row 
+.comment-hero , .comment-form 
+    width: 100%
+    @include media-in(tablet)
+        width: calc((100% / 2) - 20px)
+.comment-hero
+    border-radius: 35px
+    background-color: $purple        
+.comment-input
+    width: 100%
+    border-radius: 35px
+    &::placeholder
+        color: black
+.button-form
+    width: 100% 
+.send-comment
+    background-color: $purple
+    margin-left: auto
+    margin-right: auto
+    display: block
+    @include media-in(tablet)
+        margin-right: 0
+.footer
+    background-color: $purple
+    min-height: 100px
+    position: relative
+.footer-text
+    position: absolute
+    top: 50%
+    left: 50%
+
+//GALERY PAGE 
+
+.gallery-header
+    overflow: hidden
+    z-index: 0
+    padding-top: 60px
+    background-color: $purple
+    width:100%
+    min-height: 425px
+    position: relative
+    border-bottom-left-radius: 2.5rem
+.gallery
+    flex-flow: column wrap
+    max-height: 500px 
+    width: 100%
+.gallery-item
+    flex: auto
+    width: calc((100% / 4) - 20px)    
+.gallery-photo
+    width: 100%
+    border-radius: 35px    
