@@ -1,5 +1,5 @@
 import 'regenerator-runtime';
-import {setCacheNameDetails, skipWaiting, clientsClaim} from 'workbox-core';
+import {skipWaiting, clientsClaim} from 'workbox-core';
 import {precacheAndRoute} from 'workbox-precaching';
 import {registerRoute} from 'workbox-routing';
 import {CacheFirst, StaleWhileRevalidate} from 'workbox-strategies';
@@ -9,7 +9,6 @@ import {ExpirationPlugin} from 'workbox-expiration';
 skipWaiting();
 clientsClaim();
 
-setCacheNameDetails(CONFIG.CACHE_NAME);
 precacheAndRoute(self.__WB_MANIFEST, {
   ignoreUrlParametersMatching: [/.*/],
 });

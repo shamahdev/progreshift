@@ -54,16 +54,16 @@ module.exports = {
       start_url: '/index.html',
       display: 'standalone',
       crossorigin: 'use-credentials', // can be null, use-credentials or anonymous
-      // icons: [
-      //   {
-      //     src: path.resolve(__dirname, 'src/public/icons/icon.png'),
-      //     sizes: [96, 120, 128, 152, 167, 180, 192, 256, 384, 512, 1024],
-      //     type: 'image/png',
-      //     purpose: 'any maskable',
-      //     destination: path.join('images', 'icons'),
-      //     ios: true,
-      //   },
-      // ],
+      icons: [
+        {
+          src: path.resolve(__dirname, 'src/public/icons/logo.png'),
+          sizes: [96, 120, 128, 152, 167, 180, 192, 256, 384, 512, 1024],
+          type: 'image/png',
+          purpose: 'any maskable',
+          destination: 'icons',
+          ios: true,
+        },
+      ],
     }),
     new WorkboxPlugin.InjectManifest({
       swSrc: './src/scripts/sw.js',

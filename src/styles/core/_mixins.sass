@@ -12,13 +12,13 @@ $sides: (all, top, bottom, left, right)
   @each $side in $sides
     @if $side == 'all'
       .m-#{$space}
-        margin: #{$space/2}rem
+        margin: #{$space/2}rem !important
 
       .p-#{$space}
-        padding: #{$space/2}rem
+        padding: #{$space/2}rem !important
     @else
       .m#{str-slice($side, 0, 1)}-#{$space}
-        margin-#{$side}: #{$space/2}rem
+        margin-#{$side}: #{$space/2}rem !important
 
       .p#{str-slice($side, 0, 1)}-#{$space}
-        padding-#{$side}: #{$space/2}rem
+        padding-#{$side}: #{$space/2}rem !important

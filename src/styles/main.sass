@@ -1,6 +1,8 @@
 // Fonts
 @import "https://fonts.googleapis.com/css2?family=Poppins&display=swap"
 @import "https://fonts.googleapis.com/icon?family=Material+Icons&display=swap"
+@import "tippy.js/dist/tippy.css"
+@import "aos/dist/aos.css"
 
 // Core
 @import core/variables
@@ -10,33 +12,49 @@
 // Components
 @import components/carousel
 @import components/navbar
+@import components/chart
+@import components/popup
 
 
 .container
     padding: 0 1.5rem
     margin: 0 auto 
     @include media-in(tablet)
-        width: 90%
         max-width: 970px
     @include media-in(desktop)
-        width: 90%
         max-width: 1170px
     &.home
         flex-direction: column
         @include media-in(phone)
             flex-direction: row
 
-.home-header
+section
+    display: flex
+    flex-direction: column
+    &.reverse
+        flex-direction: column-reverse
+    &.hero-wrapper
+        margin-top: 5rem
+    @include media-in(tablet)
+        padding-top: 5rem !important
+        flex-direction: row !important
+
+
+.header
     overflow: hidden
     z-index: 0
     padding-top: 5rem
-    background-color: $primary
     width: 100%
     position: relative
     border-bottom-left-radius: 2.5rem
     @include media-in(phone)
         padding-top: 7.5rem
-
+    &.home
+        background-color: $primary
+    &.gallery 
+        background-color: $purple
+    &.tips
+        background-color: $primary    
 .social-aside
     display: none
     @include media-in(tablet)
@@ -64,7 +82,7 @@
     flex-direction: column
     width: 100%
     padding: 0 2rem
-    .header-text
+    .home-header-text
         color: #ffffff
         padding: 2rem 0
         font-weight: 400
@@ -73,6 +91,14 @@
             padding: 0
             margin: auto 0
             padding-bottom: 5rem
+    .gallery-header-text
+        color: #ffffff
+        padding: 2rem 0rem 0rem 0rem
+        font-weight: 400
+        font-size: 3rem
+        @include media-in(tablet)
+            padding: 2rem 0
+                 
 .hero
     width: 100%
     height: 100%
@@ -91,6 +117,7 @@
             width: 100%
     
 .menu-nav
+    z-index: 10
     position: absolute
     display: flex
     flex-direction: row
@@ -128,116 +155,303 @@
 .wave
     z-index: -2
     position: absolute
-    right: 0  
+    right: 0
     bottom: 0
     @include media-in(phone)
         width: 50%
         display: block
 
-//section2
-.home-section-2
-    flex-direction: column-reverse
+.section-description
+    @extend .description
+    padding: 3rem 0.5rem
     @include media-in(tablet)
-        flex-direction: row
+        padding: 3rem 2rem
+    @include media-in(desktop)
+        margin-right: 8.5rem
+    &.left-margin
+        margin-right: 0
+        @include media-in(desktop)
+            margin-left: 8.5rem
 
-.description + .chart
-    width: 100%
-    @include media-in(tablet)
-        width: calc((100% / 2)) 
-
-//section3
-.home-section-3
-    flex-direction: column
-    @include media-in(tablet)
-        flex-direction: row 
-.industry-title
-    @include media-in(tablet)
-        display: none     
-.industry-title-description
-    @include media-in(phone)
-        display: none     
-    @include media-in(tablet)
-        display: block           
 .industry-group
-    flex-wrap: wrap
-    gap: 40px
+    margin: 0 auto
+    display: grid
+    grid-gap: 1rem
+    grid-template-columns: 1fr 1fr
+    grid-template-rows: 1fr 1fr
     @include media-in(tablet)
-        padding: 0rem 5rem
+        padding: 0 0 0 3rem
+
 .industry-icon
-    width: calc((100% / 2 - 40px))
-    min-height:122px
-    padding: 1rem
+    padding: 1.5rem
     border-radius: 20px 
-    transition: 0.5s   
-    @include media-in(tablet)
-         width: 25%
-    &.primary
-        border: 2px solid $primary
-        color: $primary
-        &:active, &:hover
-            background-color: $primary
-            color: #ffffff
-    &.blue
-        border: 2px solid $blue
-        color: $blue
-        &:active, &:hover
-            background-color: $blue
-            color: #ffffff    
-    &.green
-        border: 2px solid $green
-        color: $green
-        &:active,&:hover
-            background-color: $green
-            color: #ffffff    
-    &.darkpurple
-        border: 2px solid $darkpurple    
-        color: $darkpurple         
-        &:active,&:hover
-            background-color: $darkpurple
-            color: #ffffff    
-.material-icons-outlined 
-    font-size: 5rem
-//section hero
-.home-section-hero
-    display: none
-    @include media-in(tablet)
-        display: block
-//section home video
+    transition: 0.5s
+    @each $name, $color in $pallete
+        &.#{$name}
+            border: 2px solid #{$color}
+            color: #{$color}
+            &:active, &:hover
+                background-color: #{$color}
+                color: #ffffff
+                @include drop-shadow($color)
+    span
+        font-size: 5rem
+.section-img
+    object-fit: contain
+    display: block
+    width: 100%
+    max-height: 500px
+
 .home-section-video
     background-image: url('./../public/image/Mask.png')
-    min-height: 750px
+    display: flex
     width: 100%
-    background-size: cover
-//section home new normal industry
-.home-section-newnormal
-    flex-direction: column
+    background-size: 100% 100%
+    min-height: 480px
     @include media-in(tablet)
-        flex-direction: row
-.industry-hero
-    width: 100%
-    @include media-in(tablet)
-        width: calc((100% / 2)) 
+        min-height: 750px
 
-//section home job
+.industry-hero
+    padding: 0 1rem
+    width: 100%
+    @include media-in(tablet)
+        padding: 0 0 0 3rem
+
+.people-card
+    margin: 0 0.5rem
+    margin-bottom: 4rem
+    position: relative
+    max-width: 660px
+    padding: 1.5rem
+    border-width: 2px
+    border-color: #383838
+    border-style: solid
+    border-radius: 1.5rem
+    display: flex
+    flex-direction: column
+    align-items: center
+    @include media-in(tablet)
+        margin: 3.5rem 2.5rem
+        flex-direction: row
+    .avatar
+        object-fit: cover
+        height: 200px
+        width: 200px
+        border-radius: 200px
+        padding: 1.5rem
+    .quotes
+        text-align: center
+        padding: 0 1.5rem 2.5rem 1.5rem
+        @include media-in(tablet)
+            padding: 1.5rem
+            text-align: left
+    .signature
+        margin: 0 auto
+        text-align: center
+        color: #ffff
+        padding: 1rem 1.5rem
+        border-radius: 1rem
+        background-color: $purple
+        position: absolute
+        bottom: -1.5rem
+        right: 1.5rem
+        left: 1.5rem
+        span
+            width: fit-content
+            position: absolute
+            margin: 0 auto
+            text-align: center
+            color: black
+            bottom: -2rem
+            right: 0
+            left: 0
+        @include media-in(tablet)
+            left: auto
+            right: -2rem
+
+.people-card2
+    @extend .people-card
+    border-color: #ffffff
+    color: #ffffff
+
 .home-section-job
     background-image: url('./../public/image/Rectangle 37.png')
-    min-height: 750px
-    width: 100%
-    background-size: cover
     position: relative
+    display: flex
+    width: 100%
+    background-size: 100% 100%
+    min-height: 480px
+    flex-direction: column
+    @include media-in(tablet)
+        // flex-direction: row
+        min-height: 750px
+    .wrapper
+        margin-top: 5rem
+        height: fit-content
+        width: 100%
+        display: flex
+        flex-direction: column
+        align-items: center
+        @include media-in(tablet)
+            margin-top: 9.5rem
+            flex-direction: row
+        img
+            width: 100%
+            position: absolute
+            top: 15rem
+            right: 0
+            @include media-in(tablet)
+                top: auto
+                height: auto
+                width: 50%
+                display: block
+        .section-description
+            @extend .industry-hero
+            @include media-in(tablet)
+                margin-right: 22rem
+            @include media-in(desktop)
+                margin-right: 0
+    .card-container
+        @extend .container
+        margin-top: auto
+    .industry-card
+        position: absolute
+        right: 0
+        left: 0
+        display: flex
+        flex-direction: column
+        background-color: #ffffff
+        border-radius: 2.5rem
+        margin-top: -2rem
+        @include media-in(desktop)
+            @include drop-shadow(transparentize($purple, 0.2), 30px 60px)
+        @include media-in(tablet)
+            margin: 0 auto
+            margin-top: -25rem
+            width: 630px
+        @include media-in(desktop)
+            width: 100%
+            margin: 0 auto
+            margin-top: -20rem
+            max-width: 1024px
 
-//section bottom navigate
+            flex-direction: row
+        .card-carousel
+            height: 250px
+            width: 320px
+            padding: 2rem 0
+            margin: 0 auto
+            background-color: #ffffff
+            border-radius: 2.5rem
+            @include media-in(tablet)
+                height: 320px
+                width: 480px
+            @include media-in(desktop)
+                width: 480px
+                height: 480px
+                padding: 2rem 0 2rem 2rem
+            img
+                object-fit: contain
+                width: 320px
+                height: 250px
+                max-width: 100%
+                @include media-in(tablet)
+                    height: 320px
+                    width: 480px
+                    max-width: 480px
+                @include media-in(desktop)
+                    margin: 0 1rem
+                    width: 410px
+                    height: 480px
+        .card-detail
+            border-radius: 2.5rem 2.5rem 0 0
+            padding: 2rem
+            background-color: #383838
+            color: #ffffff
+            display: flex
+            flex-direction: column
+            @include media-in(tablet)
+                border-radius: 2.5rem 2.5rem
+            @include media-in(desktop)
+                width: 420px
+            button
+                color: #ffffff
+                margin-top: 1rem
+                margin-left: 1rem
+                width: fit-content
+                padding: 1rem 2rem
+                border: 2px solid #ffffff
+                border-radius: 1.5rem
+                transition: 0.3s
+                &:hover, &:focus
+                    background-color: #ffffff
+                    color: #383838
+                    @include drop-shadow(#ffffff)
+                    
 
-.bottom-nav
-    transition: 0.5s
-    padding: 1rem
-    max-width: 25rem
-    margin-left: auto
-    margin-right: auto
-    display: block
-    border-radius: 35px
-    &:hover,&:active
-        background-color: #EADFDF
+.home-section-remember
+    margin-top: 55.5rem
+    @include media-in(tablet)
+        margin-top: 20rem
+    @include media-in(desktop)
+        margin-top: 15rem
+    .remember-option
+        margin-top: 2rem
+        display: flex
+        flex-direction: column
+        justify-content: center
+        gap: 0 2rem
+        @include media-in(tablet)
+            flex-direction: row
+        button
+            border-radius: 20px
+            transition: 0.3s
+            color: #383838
+            padding: 1.5rem
+            span
+                font-size: 5rem
+            &:hover, &:focus, &.active
+                transition: 0.3s
+                color: $purple
+                @include drop-shadow(transparentize($purple, 0.3))
+                
+                
+
+
+.navigate-bottom
+    margin-top: 10rem
+    display: flex
+    flex-direction: column
+    .medium
+        margin-bottom: 2rem
+    .bottom-nav
+        font-weight: 300
+        transition: 0.5s
+        padding-left: 2.5rem
+        max-width: 25rem
+        margin-top: 1rem
+        margin-left: auto
+        margin-right: auto
+        display: inline-block
+        border-radius: 35px
+        span
+            transition: 0.3s
+            opacity: 0
+            color: #ffffff
+            background-color: $purple
+            border-radius: 2.5rem
+            padding: 0.5rem
+            @include drop-shadow($purple)
+        &:hover, &:active
+            padding: 0 0 0 1rem
+            background-color: #EADFDF
+            span
+                transition: 0.3s
+                opacity: 1
+                margin-left: 3rem
+                
+.comment-section
+    @extend .navigate-bottom
       
 .bottom-nav-icon
     transition: 1s
@@ -246,7 +460,6 @@
     min-width: 44px
     min-height: 44px
     font-size: 2.5rem
-       
     display: none  
 
 .bottom-nav:hover > .bottom-nav-icon 
@@ -267,16 +480,36 @@
     width: 100%
     @include media-in(tablet)
         width: calc((100% / 2) - 20px)
+.comment-form
+    display: flex
+    flex-direction: column
+    align-items: stretch
+    align-content: stretch
 .comment-hero
     border-radius: 35px
-    background-color: $purple        
+    background-color: $purple
+    img
+        padding: 2rem 2rem 0 2rem
+        transform: scaleX(-1)
 .comment-input
+    height: 100%
     width: 100%
     border-radius: 35px
     &::placeholder
-        color: black
+        font-weight: 300
+    &.search
+        background-color:#F8F8F8
+input.comment-input
+    height: fit-content
 .button-form
-    width: 100% 
+    width: 100%
+    button
+        transition: 0.3s
+        @include media-in(tablet)
+            margin-right: 1rem
+        &:hover, &:focus
+            transition: 0.3s
+            @include drop-shadow($purple)
 .send-comment
     background-color: $purple
     margin-left: auto
@@ -288,10 +521,13 @@
     background-color: $purple
     min-height: 100px
     position: relative
+.footer2
+    @extend .footer
+    background-color: #242424
 .footer-text
-    position: absolute
-    top: 50%
-    left: 50%
+    text-align: center
+    vertical-align: middle
+    line-height: 100px  
 
 //GALERY PAGE 
 
@@ -304,13 +540,255 @@
     min-height: 425px
     position: relative
     border-bottom-left-radius: 2.5rem
+    @include media-in(phone)
+        padding-top: 7.5rem
+
+a.scroll-button
+    font-size: 1rem
+    padding: 0.75rem 1.25rem
+    width: fit-content
+    color: white
+    border: 2px solid #ffffff
+    margin: 0.5rem 0rem
+    border-radius: 1.5rem
+    transition: 0.3s
+    display: none
+    @include media-in(tablet)
+        display: block  
+    &:focus, &:hover
+        transition: 0.3s
+        @include drop-shadow(white)
+        background-color: white
+        color: $purple    
+    &.phone-button-only
+        display: block
+        margin-left: auto
+        margin-right: auto
+        @include media-in(tablet)
+            display: none    
+.gallery-header-container
+    flex-direction: column  
+    @include media-in(tablet)  
+        flex-direction: row
+    
+.gallery-hero
+    width: 100%
+
 .gallery
     flex-flow: column wrap
-    max-height: 500px 
+  
     width: 100%
+    max-height: 1000px
+    gap: 20px
+    @include media-in(tablet)  
+        max-height: 950px
+    @include media-in(desktop)  
+        max-height: 720px    
+  
 .gallery-item
-    flex: auto
-    width: calc((100% / 4) - 20px)    
+
+    width: calc((100% / 2) - 12px)  
+    @include media-in(tablet)  
+        width: calc((100% / 3) - 12px)  
+    @include media-in(desktop)
+        width: calc((100% / 4) - 12px)
 .gallery-photo
     width: 100%
+    border-radius: 1.5rem
+            
+        
+
+.upload-gallery-group
+    @include drop-shadow(#cccccc, 50px 50px)
+    background-color: white
+    max-width: 35rem
+    border-radius: 2.5rem
+    margin-left: auto
+    margin-right: auto
+    display: block
+
+a.upload-gallery-button
+    font-size: 1rem
+    padding: 0.75rem
+    max-width: 10rem
+    display: block
+    margin-left: auto
+    margin-right: auto
+    color: white
+    background-color: $purple
+    border-radius: 1rem
+    transition: 0.3s   
+
+//tips page
+.tips-container
+    background-color: #F8F8F8
+.container.white-background
     border-radius: 35px    
+.form, .tips-hero
+    width: 100%
+    @include media-in(tablet) 
+        width: calc(100% / 2)
+.tips-hero
+    position: relative
+    display: none
+    @include media-in(tablet)  
+        display: initial
+.tips-item
+    cursor: pointer
+    padding: 1rem
+    width: 100%
+    transition: 0.3s
+    border-radius: 35px
+    &:hover
+        background-color: #F8F8F8
+        @include drop-shadow(#F8F8F8)
+.tips-title
+    font-size: 0.75rem
+    @include media-in(tablet)
+        font-size: 1.25rem
+.tips-description
+    display: none
+    font-size: 1rem
+    @include media-in(tablet) 
+        display: block
+.tips-icon
+    margin: auto
+    padding: 0.5rem
+    border-radius: 20px 
+    transition: 0.5s
+    color: white
+    background-color: $primary
+    span
+        font-size: 3rem
+        @include media-in(tablet) 
+            font-size: 5rem
+        
+.tips-hero-container
+    border-radius: 25px
+    background-color: $primary
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+.about-background
+    content: ''
+    position: absolute
+    z-index: 0
+    background-color: $purple
+    top: 0
+    left: 0
+    width: 100%
+    height: 220px
+    @include media-in(tablet)
+        max-width: 400px
+        height: 400px
+    @include media-in(desktop)
+        max-width: 35%
+        height: 500px
+
+.about-hero
+    position: relative
+    width: 100%
+    z-index: 1
+    .img-carousel
+        margin: 0 auto
+        min-width: 280px
+        width: 100%
+        border-radius: 1.5rem
+        @include media-in(tablet)
+            width: 400px
+        @include media-in(desktop)
+            width: 500px
+        img
+            min-width: 280px
+            width: 100%
+            @include media-in(tablet)
+                width: 400px
+            @include media-in(desktop)
+                width: 500px
+
+.img-controller
+    position: absolute
+    right: 0
+    z-index: 2
+    button
+        background-color: #dbdbdb
+        height: 6px
+        width: 60px
+        &.active
+            background-color: $purple
+
+.about-container
+    margin-top: 5rem
+    @extend .container
+    .section-description
+        z-index: 1
+
+.profile-section
+    display: flex
+    flex-direction: column !important
+    h2
+        width: 100%
+        margin-bottom: 4rem
+    .profile-card
+        margin: 0 auto
+        margin-bottom: 2rem
+        transition: 0.3s
+        border-radius: 1.5rem
+        width: fit-content
+        background-color: #ffffff
+        display: flex
+        flex-direction: column
+        @include media-in(tablet)
+            padding: 1.5rem
+            margin: 0
+        &.reverse
+            @include media-in(tablet)
+                margin-left: auto
+                flex-direction: row-reverse
+                text-align: right
+        &:hover, &:focus
+            transition: 0.3s
+            background-color: #ececec
+            @include drop-shadow(#ececec)
+
+        @include media-in(tablet)
+            flex-direction: row
+        img
+            object-fit: cover
+            border-radius: 2.5rem
+            width: 240px
+            height: 240px
+            padding: 0.5rem
+        .profile-content
+            padding: 0 1rem
+            margin: auto
+            font-size: 1.25rem
+            .medium 
+                font-size: 1.5rem
+            p.d-flex, p.d-flex-reverse
+                display: block
+                text-align: center
+                padding: 1rem 0
+                font-size: 0.8rem
+                span
+                    display: none
+                @include media-in(tablet)
+                    display: flex
+                    text-align: inherit
+                    font-size: 1rem
+                    span
+                        display: inline-block
+
+.section-end
+    @extend .home-section-job
+    background-size: cover
+    h2
+        color: #ffffff
+        margin-top: 15rem
+        margin-bottom: 2.5rem
+        @include media-in(tablet)
+            margin-top: 15rem
+            margin-bottom: 0
+            
+

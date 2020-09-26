@@ -1,0 +1,154 @@
+{
+    "covid": [
+        {
+            "id": "1",
+            "country": "malaysia",
+            "confirmed": "10.505",
+            "death": "130"
+        },
+        {
+            "id": "2",
+            "country": "indonesia",
+            "confirmed": "257.388",
+            "death": "9.977"
+        },
+        {
+            "id": "3",
+            "country": "filipina",
+            "confirmed": "294.591",
+            "death": "5.091"
+        },
+        {
+            "id": "4",
+            "country": "timor leste",
+            "confirmed": "27",
+            "death": "0"
+        },
+        {
+            "id": "5",
+            "country": "kamboja",
+            "confirmed": "275",
+            "death": "0"
+        },
+        {
+            "id": "6",
+            "country": "vietnam",
+            "confirmed": "1.069",
+            "death": "35"
+        },
+        {
+            "id": "7",
+            "country": "thailand",
+            "confirmed": "3.514",
+            "death": "59"
+        },
+        {
+            "id": "8",
+            "country": "myanmar",
+            "confirmed": "7.292",
+            "death": "130"
+        },
+        {
+            "id": "9",
+            "country": "laos",
+            "confirmed": "23",
+            "death": "0"
+        },
+        {
+            "id": "10",
+            "country": "brunei",
+            "confirmed": "145",
+            "death": "3"
+        },
+        {
+            "id": "11",
+            "country": "singapura",
+            "confirmed": "57.654",
+            "death": "27"
+        },
+        {
+            "id": "12",
+            "country": "china",
+            "confirmed": "85.307",
+            "death": "4.634"
+        },
+        {
+            "id": "13",
+            "country": "hongkong",
+            "confirmed": "5.057",
+            "death": "104"
+        },
+        {
+            "id": "14",
+            "country": "jepang",
+            "confirmed": "80.041",
+            "death": "1.520"
+        },
+        {
+            "id": "15",
+            "country": "korea utara",
+            "confirmed": "23.341",
+            "death": "393"
+        },
+        {
+            "id": "16",
+            "country": "iran",
+            "confirmed": "407.353",
+            "death": "23.453"
+        },
+        {
+            "id": "17",
+            "country": "turki",
+            "confirmed": "294.620",
+            "death": "7.186"
+        },
+        {
+            "id": "18",
+            "country": "bangladesh",
+            "confirmed": "355.384",
+            "death": "5.072"
+        },
+        {
+            "id": "19",
+            "country": "india",
+            "confirmed": "5.732.518",
+            "death": "91.149"
+        },
+        {
+            "id": "20",
+            "country": "nepal",
+            "confirmed": "69.301",
+            "death": "453"
+        },
+        {
+            "id": "21",
+            "country": "pakistan",
+            "confirmed": "308.217",
+            "death": "6.437"
+        },
+        {
+            "id": "22",
+            "country": "afghanistan",
+            "confirmed": "39.170",
+            "death": "1.451"
+        },
+        {
+            "id": "23",
+            "country": "maladewa",
+            "confirmed": "9.770",
+            "death": "34"
+        },
+        {
+            "id": "24",
+            "country": "sri lanka",
+            "confirmed": "3.324",
+            "death": "13"
+        },
+        {
+            "id": "25",
+            "country": "arab saudi",
+            "confirmed": "331.359",
+            "death": "4.569"
+        }        
+    ]
+}

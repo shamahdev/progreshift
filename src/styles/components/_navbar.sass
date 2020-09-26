@@ -3,39 +3,63 @@ nav
     z-index: 999
     left: 0
     right: 0
-    position: absolute
+    position: fixed
     width: 100%
     display: flex
     flex-direction: row
     justify-content: flex-start
     height: 70px
+    &.floating
+        transition: 0.3s
+        background-color: $primary
+        @include media-in(tablet)
+            border-radius: 0 0 2.5rem 2.5rem
+    &.floating2
+        @extend .floating
+        background-color: $purple
+        #drawer
+            background-color: $purple !important
+    &.floating3
+        #drawer
+            a
+                color: transparentize(#000000, 0.25)
+                &.active
+                    color: #000000
+
+    &.floating3-extended
+        @extend .floating2
+        #drawer
+            a
+                color: transparentize(#ffffff, 0.25)
+                &.active
+                    color: #ffffff
+
 
     #drawer
+        background-color: $primary
         color: #ffffff
         position: absolute
         margin-block-start: 0
         margin-block-end: 0
         top: 69px
         width: 220px
-        height: 0vh
-        transform: translate(-220px, 0)
-        transition: all 0.3s
+        height: 100vh
+        transform: translate(-244px, 0)
+        transition: 0.3s
         display: flex
         flex-direction: column
         z-index: 999
         @include media-in(tablet)
+            background-color: transparent
             margin: auto 0 auto auto
             transform: translate(0, 0)
-            width: auto
             height: auto
+            width: auto
             flex-direction: row
             position: static
         &.open
             height: 100vh
-            transform: translate(0, 0)
-        &.open ~ .title
-            transition: all 0.3s
-            border-bottom-right-radius: 0 !important
+            transform: translate(-24px, 0)
         li
             display: flex
         a
@@ -48,7 +72,19 @@ nav
             overflow: hidden
             z-index: 1 
             &.active
-                color: white
+                color: #ffffff
+                @include media-in(tablet)
+                    &::before
+                        transform: translateX(-50%)
+                        border-radius: 100%
+                        position: absolute
+                        background: #ffffff
+                        bottom: 8px
+                        height: 5px
+                        content: ''
+                        width: 5px
+                        left: 50%
+                
     
     #hamburger
         color: #ffffff
@@ -56,9 +92,8 @@ nav
         height: 100%
         padding: 1rem
         font-size: 2rem
-        transition: all .3s
         &:hover, &:focus
-            background-color: #ffffff
+            background-color: $purple
         @include media-in(tablet)
             display: none
     

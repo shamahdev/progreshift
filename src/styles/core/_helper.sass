@@ -19,9 +19,14 @@ body
   flex-direction: column
     
 h2
-  font-size: 1.5rem
+  font-size: 1.75rem
+  @include media-in(phone)
+    font-size: 2rem
 li
   display: inline-block
+
+p
+  font-weight: 300
 a
   color: inherit
   outline: none
@@ -53,11 +58,20 @@ main
   user-select: none
   &.inherit
     font-size: inherit
-
+sup
+  font-size: 1rem
+.medium
+  font-size: 1.25rem
+  font-weight: 500
 .center
   text-align: center
 .d-flex
   display: flex
+.d-flex-reverse
+  display: flex
+  flex-direction: row-reverse
+.flex-column
+  flex-direction: column !important
 .margin-top-2
   margin-top: 20px  
 .mh-auto
@@ -68,3 +82,6 @@ main
   padding-top: 10rem  
 .white-text
   color: white
+.white-background
+  background-color: white
+

@@ -1,0 +1,53 @@
+{
+    "career": [
+      {
+        "id": 0,
+        "name": "Berbisnis Online",
+        "caption": "<p>Selama new normal pasti akan ada beberapa perilaku masyarakat yang ikut berubah karena harus bisa menyesuaikan dengan situasi yang ada. Kebiasaan baru seperti bekerja dari rumah, social distancing, physical distancing menjadikan bisnis online semakin digemari.  Bisnis online yang sekarang banyak digemari diantaranya : </p>",
+        "detail": "<ol><li>Jual Frozen Food / makanan beku</li><p>Bekerja dari rumah dalam waktu yang lama dan ketakutan akan keluar rumah membuat beberapa orang lebih memilih untuk membeli makanan beku yang awet lebih lama demi mengurangi frekuensi keluar rumah untuk berbelanja.</p><li>Jual Jus Sehat dan Minuman Herbal</li><p>Pandemi corona menyadarkan masyarakat akan pentingnya kesehatan dan imun tubuh. Untuk itu permintaan terhadap produk kesehatan dan yang bisa meningkatkan daya tahan tubuh pun menjadi tinggi baik itu yang berbentu multivitamin atau yang langsung minum seperti jus atau minuman herbal/jamu.</p><li>Pengajar Online Berbayar</li><p>Jika kamu memiliki skill yang bisa dibagikan dan kemampuan mengajar yang lumayan kamu bisa mencoba membuka kelas sendiri yang berbayar. Kamu bisa membuka kelas sendiri di patron atau membuka kelas di website-website yang sering digunakan untuk belajar online. Biasanya website seperti itu memiliki lowongan untuk pengajar agar bisa membuka lebih banyak kelas.</p></ol>",
+        "pictureId": "online shop",
+        "source": "jadikaryawan.com"
+      },
+      {
+        "id": 1,
+        "name": "Cyber Security",
+        "caption": "<p>Salah satu pekerjaan yang bisa digeluti di era new normal adalah cyber security. Pekerjaan tersebut adalah suatu aktivitas untuk mengamankan, melindungi informasi daya telematika dan mencegah Tindakan cyber crime atau cyber attack. Dimana gangguan tersebut bisa menganggu kerahasian, integritas, dan ketersediaan informasi itu sendiri.</p>",
+        "detail": "<p>Adanya pekerjaan cyber security sendiri sangat tepat dan logis untuk diadakan, mengingat semua sektor industri tadi sudah dilakukan dengan digital.</p><p>Ada berapa tujuan dari cyber crime untuk merusak sistem dan meretasnya, seperti karena dendam, ingin menjatuhkan lawan, sekedar iseng, atau ada pula yang ingin mencari kebenaran.</p><p>Adapun orang-orang yang bisa menjadi cyber security ini harus bisa memiliki skill berikut ini : </p><ul><li>Paham tentang programming</li><li>Bidang analisis dan mitigasi risiko</li><li>Bisa mendeteksi intrusi</li><li>Bisa menganalisis malware</li><li>Memiliki keterampilan enkripsi untuk melindungi data-data yang ada</li></ul>",
+        "pictureId": "cyber-security",
+        "source": "jadikaryawan.com"
+      },
+      {
+        "id": 2,
+        "name": "Digital Marketing",
+        "caption": "<p>Mengingat perkembangan teknologi digital saat ini berkembang dengan pesat, maka kesadaran para pelaku teknologi tersebut untuk mengetahui digital marketing pun semakin luas.Apalagi, ditengah pandemi saat ini, banyak perusahaan yang sudah melakukan pemasaran produknya menggunakan digital marketing.</p>",
+        "detail": "<p>Adanya digital marketing sendiri adalah untuk mempromosikan sebuah produk atau brand dengan menggunaan media elektronik.Beberapa puluh tahun silam, media digital ini sudah ada tapi masih terbatas, seperti radio dan televisi yang hanya bisa menyampaikan satu arah.</p><p>Sekarang, media yang digunakan tentulah sudah banyak dan beragam. Termasuk juga Teknik pemasaran yang bisa Anda gunakan dalam digital marketing, seperti : </p><ul><li>Promosi Online menggunakan media sosial, seperti Fb ads, google ads, whatsapp, dll,</li><li>SEO,</li><li>Menggunakan media cetak</li><li>Email marketing</li><li>Mobile marketing</li><li>Billboard Elektronik</li><li>Mobile marketing, dan lain-lain</li></ul><p>Adapun syarat yang bisa dilakukan seseorang pelaku digital marketing adalah minimal bisa mengoperasikan media sosial dan memiliki kemampuan dalam Teknik copy writing, untuk bisa ‘’menghipnotis’’ target marketingnya.</p><p>Seseorang yang bekerja sebagai digital marketing ini ada yang bekerja full time maupun freelancer. Gaji yang diterima pun cukup menjanjikan yaitu berkisar 3-8 juta tergantung pengalaman, kebijakaan perusahaan, dan UMR di kota tempat Anda bekerja.</p>",
+        "pictureId": "digital-marketing",
+        "source": "jadikaryawan.com"
+      },
+      {
+        "id": 3,
+        "name": "Developer Aplikasi dan Web",
+        "caption": "<p>Mengingat perkembangan teknologi digital saat ini berkembang dengan pesat, maka kesadaran para pelaku teknologi tersebut untuk mengetahui digital marketing pun semakin luas.Apalagi, ditengah pandemi saat ini, banyak perusahaan yang sudah melakukan pemasaran produknya menggunakan digital marketing.</p>",
+        "detail": "<p>Perlu diketahui seorang developer sangatlah berbeda dengan programmer, karena tugas seorang developer adalah merancang berbagai struktur dalam sebuah aplikasi. Adapaun pengembangan lainnya, biasanya dibantu oleh tim desain agar aplikasi bisa tampil cantik dan menarik.</p><p>Seseorang yang ingin menjadi developer harus memiliki kemampuan berikut ini : </p><ul><li>Mengetahui pengetahuan dasar OOP dan XML</li><li>Mengetahui pemilihan tools yang akan digunakan untuk android atau yang lainnya</li><li>Pemilihan library yang baik</li><li>Paham dengan arsitektur aplikasi</li></ul>",
+        "pictureId": "developer",
+        "source": "jadikaryawan.com"
+      },
+      {
+        "id": 4,
+        "name": "Barista",
+        "caption": "<p>Meningkatnya animo masyarakat terhadap kopi, mengharuskan para pemilik kedai kopi membuka lowongan pekerjaan bagi barista atau peracik kopi. Para pecinta kopi tersebut tidak tanggung-tanggung membeli kopi dengan ukuran hingga 1 liter.</p>",
+        "detail": "<p>Inovasi tersebut tidak hanya terjadi pada satu kedai kopi saja, melainkan banyaknya kedai kopi yang telah berinovasi dalam hal tersebut.</p><br><p>Tentu saja, inovasi tersebut memerlukan peran barista untuk bisa meracik kopi-kopi yang enak agar bisa diterima banyak orang.</p><br><p>Jika Anda memiliki keahlian dalam hal ini, bersiaplah untuk menerima banyak orderan dari para pecinta kopi atau para pemilik kedai.</p><br>",
+        "pictureId": "barista",
+        "source": "jadikaryawan.com"
+      },
+      {
+        "id": 5,
+        "name": "Social Media Specialist",
+        "caption": "<p>Di masa pandemi sekarang ini hampir seluruh bisnis beralih menjadi bisnis online yang mana mereka menggunakan berbagai media sosial untuk mempromosikan produk-produknya. Hal ini membuat kebutuhan akan pengelola sosial media cukup meningkat.</p>",
+        "detail": "<p>Pekerjaan sebagai Social Media Specialist sebenarnya hampir sama dengan Public Relations. Jika seorang Public Relation bertugas untuk mempromosikan suatu produk perusahaan melalui offline event dan kerja sama media, maka seorang Social Media Specialist bertugas untuk mempromosikan produk melalui platform media sosial, seperti Facebook, Twitter, LinkedIn, dan Instagram.</p><p>Selain membuat konten, Social Media Specialist juga bertugas untuk membuat campaign agar dapat meningkatkan brand awareness perusahaan, membangun hubungan yang baik dengan pelanggan, dll</p>",
+        "pictureId": "social-media",
+        "source": "niagahoster.co.id"
+      }
+    ]
+  }
+  

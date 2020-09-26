@@ -1,0 +1,64 @@
+.chart
+    margin: 0 auto
+    width: fit-content
+    display: flex
+    flex-direction: column
+    background-color: #f1f1f1
+    border-radius: 1.5rem
+    padding: 1.5rem
+    @include media-in(tablet)
+        margin: 0 2rem 0 0
+    .chart-header
+        display: flex
+        flex-direction: row
+        align-items: center
+        margin-bottom: 1rem
+        .chart-title
+            margin-right: auto
+            font-weight: 400rem
+        .time
+            background-color: $purple
+            padding: 0.25rem 0.5rem
+            color: #ffffff
+            border-radius: 0.5rem
+            font-size: 0.8rem
+    .chart-content
+        padding: 1.5rem
+        background-color: $primary
+        border-radius: 1.5rem
+        @include drop-shadow($primary)
+        .tab
+            font-size: 0.75rem
+            margin-bottom: 5rem
+            button
+                color: transparentize(#000000, 0.5)
+                position: relative
+                padding: 0.5rem
+                &.active
+                    color: #000000
+                    &::before
+                        transform: translateX(-50%)
+                        border-radius: 100%
+                        position: absolute
+                        background: black
+                        bottom: -2px
+                        height: 5px
+                        content: ''
+                        width: 5px
+                        left: 50%
+        .chart-bar
+            display: flex
+            flex-direction: row
+            align-items: flex-end
+            border-color: #ffffff
+            border-style: none none solid solid
+            border-width: 2px
+            button
+                width: 4px
+                margin: 2px
+                background-color: transparentize(#ffffff, 0.5)
+                &:hover
+                    background-color: #ffffff
+                @for $height from 0 through 10
+                    &[data-height="#{$height}"]
+                        height: #{$height*1.25}rem
