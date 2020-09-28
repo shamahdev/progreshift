@@ -1,4 +1,5 @@
 import AOS from 'aos';
+import Swal from 'sweetalert2';
 
 const Gallery = {
   async render() {
@@ -14,9 +15,9 @@ const Gallery = {
              <a href="#gallery/lastImg" class="scroll-button phone-button-only mb-3">Lihat Galeri</a>
            </div>
            <div class="social-aside">
-              <a data-aos="zoom-out" href="https://www.facebook.com/sharer/sharer.php?u=http://progreshift.web.app/" target="_blank" rel="noopener" class="material-icons">notifications</a>
-              <a data-aos="zoom-out" data-aos-delay="100" href="https://www.facebook.com/sharer/sharer.php?u=http://progreshift.web.app/" target="_blank" rel="noopener" class="material-icons">facebook</a>
-              <a data-aos="zoom-out" data-aos-delay="200" href="https://www.facebook.com/sharer/sharer.php?u=http://progreshift.web.app/" target="_blank" rel="noopener" class="material-icons">share</a>
+           <a data-aos="zoom-out" href="http://hiedescom.com/" target="_blank" rel="noopener" class="material-icons">public</a>
+           <a data-aos="zoom-out" data-aos-delay="100" href="https://www.facebook.com/sharer/sharer.php?u=http://progreshift.web.app/" target="_blank" rel="noopener" class="material-icons">facebook</a>
+           <button data-aos="zoom-out" data-aos-delay="200" id="copyClipboard" class="material-icons">share</button>
         </div>
          </div>
        </div>
@@ -82,6 +83,16 @@ const Gallery = {
 
   async afterRender() {
     AOS.init();
+
+    document.querySelector('#copyClipboard').addEventListener('click', () => {
+      copyTextToClipboard('progreshift.web.app');
+      Swal.fire({
+        title: 'Tautan telah dicopy kedalam Clipboard',
+        text: 'Klik untuk kembali',
+        icon: 'success',
+        confirmButtonText: 'OK'
+      })
+    })
   }
 };
 

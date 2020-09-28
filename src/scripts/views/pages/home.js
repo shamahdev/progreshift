@@ -5,6 +5,7 @@ import CareerSlider from "../../utils/career-slide-init";
 import tippy from 'tippy.js';
 import chartBar from '../../utils/chart-bar-init';
 import AOS from 'aos';
+import copyTextToClipboard from '../../helpers/copy-to-clipboard';
 
 const Home = {
   async render() {
@@ -14,15 +15,15 @@ const Home = {
             <div class="description">
               <h2 class="home-header-text">Kita Bisa<br>Kita Hebat!</h2>
               <div class="menu-nav">
-                <a data-aos="zoom-in" class="menu-button active">
+                <a href="#" data-aos="zoom-in" class="menu-button active">
                   <p class="semibold">01</p>
                   <p class="desc">Pandemi</p>
                 </a>
-                <a data-aos="zoom-in" data-aos-delay="100"class="menu-button">
+                <a href="#newNormal" data-aos="zoom-in" data-aos-delay="100"class="menu-button">
                   <p class="semibold">02</p>
                   <p class="desc">New Normal</p>
                 </a>
-                <a data-aos="zoom-in" data-aos-delay="200" class="menu-button">
+                <a href="#karirKu" data-aos="zoom-in" data-aos-delay="200" class="menu-button">
                   <p class="semibold">03</p>
                   <p class="desc">Pilihan Karir</p>
                 </a>
@@ -33,9 +34,9 @@ const Home = {
               <img alt="" src="./image/Vector 3.png" class="wave">
             </div>
             <div class="social-aside">
-              <a data-aos="zoom-out" href="https://www.facebook.com/sharer/sharer.php?u=http://progreshift.web.app/" target="_blank" rel="noopener" class="material-icons">notifications</a>
+              <a data-aos="zoom-out" href="http://hiedescom.com/" target="_blank" rel="noopener" class="material-icons">public</a>
               <a data-aos="zoom-out" data-aos-delay="100" href="https://www.facebook.com/sharer/sharer.php?u=http://progreshift.web.app/" target="_blank" rel="noopener" class="material-icons">facebook</a>
-              <a data-aos="zoom-out" data-aos-delay="200" href="https://www.facebook.com/sharer/sharer.php?u=http://progreshift.web.app/" target="_blank" rel="noopener" class="material-icons">share</a>
+              <button data-aos="zoom-out" data-aos-delay="200" id="copyClipboard" class="material-icons">share</button>
             </div>
           </div>
         </div>
@@ -55,8 +56,7 @@ const Home = {
               </div>
               <div class="chart-content">
                 <div class="tab">
-                  <button class="active">Terkonfirmasi</button>
-                  <button>Meninggal</button>
+                  <button class="active">Kasuk Terkonfirmasi dan Korban Meninggal</button>
                 </div>
                 <div class="chart-bar">
                 </div>
@@ -89,10 +89,12 @@ const Home = {
             </div>
             <div class="section-description left-margin">
               <h2 class="p-2" data-aos="fade-up">Industri Paling Terdampak</h2>
-              <p class="p-2" data-aos="fade-up" data-aos-delay="100">Dilansir dari Kompasiana.com sektor pariwisata menjadi sektor yang paling terdampak. Hal ini disebakan </p>
+              <p class="p-2" data-aos="fade-up" data-aos-delay="100">Pandemi virus Corona telah mengubah bagaimana orang bekerja, belajar, memenuhi kebutuhan sehari-hari, bahkan berinteraksi. Industri mulai dituntut mengembangkan model yang lebih sustainable di tengah pandemi Covid-19.
+              Dilansir dari www.wartaekonomi.co.id, Sektor Hotel dan Pariwisata
+              menjadi sektor pertama yang merasakan keterpurukan.</p>
             </div>
         </section>
-        <section class="container hero-wrapper">
+        <section id="newNormal" class="container hero-wrapper">
           <img alt="" src="./image/new normal 1.png" class="section-img">
         </section>
         <div class="home-section-video">
@@ -189,7 +191,7 @@ const Home = {
             </div>
             <img src="./image/Rectangle.png">
           </div>
-          <div class="card-container">
+          <div id="karirKu" class="card-container">
             <div class="industry-card" data-aos="fade-up">
               <div class="card-carousel">
               </div>
@@ -257,6 +259,16 @@ const Home = {
   async afterRender() {
     AOS.init();
     tippy('[data-tippy-content]');
+
+    document.querySelector('#copyClipboard').addEventListener('click', () => {
+      copyTextToClipboard('progreshift.web.app');
+      Swal.fire({
+        title: 'Tautan telah dicopy kedalam Clipboard',
+        text: 'Klik untuk kembali',
+        icon: 'success',
+        confirmButtonText: 'OK'
+      })
+    })
 
     const prevButton = document.querySelector("#prevButton");
     const nextButton = document.querySelector("#nextButton");
